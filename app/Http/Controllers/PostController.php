@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Models\User;
 
 class PostController extends Controller
 {
@@ -13,8 +14,10 @@ class PostController extends Controller
         $this->middleware('auth');
     }
 
-    public function index() {
-        return view( 'dashboard');
+    public function index(User $user) {
+        return view( 'dashboard', [
+            'user' => $user
+        ]);
     }
 
     /**
