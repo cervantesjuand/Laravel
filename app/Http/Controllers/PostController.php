@@ -20,6 +20,10 @@ class PostController extends Controller
         ]);
     }
 
+    public function create() {
+        return view('posts.create');
+    }
+
     /**
      * Store a newly created resource in storage.
      */
